@@ -1,0 +1,2 @@
+# From old blog format
+/posts/* /:splat 301!

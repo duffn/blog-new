@@ -1,0 +1,3 @@
+# nicholasduffy.com
+
+My blog.
