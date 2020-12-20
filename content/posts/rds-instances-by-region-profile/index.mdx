@@ -6,6 +6,7 @@ tags:
   - aws
   - aws-cli
   - rds
+  - aws-vault
 slug: "/get-rds-instances-by-region-profile/"
 ---
 
@@ -30,6 +31,7 @@ echo '"Profile", "Region", "DBInstanceIdentifier", "DBName", "DBInstanceClass", 
 for region in $(aws ec2 describe-regions --output text | cut -f4); do
   for profile in "${PROFILES[@]}"; do
     # Extract the fields that we want from the response and include our profile and region as arguments so we can get them in the output as well.
+    # Note that I'm using `aws-vault` here and you should too! https://github.com/99designs/aws-vault
     aws-vault exec "$profile" -- aws rds describe-db-instances --region "$region" | \
       jq -r --arg PROFILE "$profile" --arg REGION "$region" '.DBInstances[] | [$PROFILE, $REGION, .DBInstanceIdentifier, .DBName, .DBInstanceClass, .Engine, .AvailabilityZone, .DBInstanceStatus, .Endpoint.Address, .AllocatedStorage] | @csv'
   done
