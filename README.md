@@ -1,3 +1,3 @@
-# nicholasduffy.com
+# blog
 
-My blog.
+My blog. https://nicholasduffy.com
