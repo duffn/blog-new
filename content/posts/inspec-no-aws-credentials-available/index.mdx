@@ -89,6 +89,6 @@ region = us-east-1
 
 That can't be it, can it? Is it?
 
-Well it turned out that it was. InSpec was not be able to read my `inspec` profile credentials because `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` were capitalized in my credentials file. I copied and pasted from another profile, which I don't recall why I made the keys capitalized, and InSpec couldn't handle it. After changing the keys to `aws_access_key_id` and `aws_secret_access_key`, InSpec found my credentials and I was able to run my controls.
+Well it turned out that it was. InSpec was not be able to read my `inspec` profile credentials because `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` were capitalized in my credentials file, because [this is how the Ruby AWS SDK works](https://github.com/aws/aws-sdk-ruby/issues/2458). I copied and pasted from another profile, which I don't recall why I made the keys capitalized, and InSpec couldn't handle it. After changing the keys to `aws_access_key_id` and `aws_secret_access_key`, InSpec found my credentials and I was able to run my controls.
 
 So, if you're having trouble with InSpec telling you `No AWS credentials available` or that `It appears that you have not set your AWS credentials`, check your credentials file and make sure your capitalization is correct.
