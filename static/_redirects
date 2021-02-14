@@ -1,2 +1,3 @@
 # From old blog format
 /posts/* /:splat 301!
+/static-websites-with-aws-s-3-and-cloudflare /static-websites-with-aws-s-3-and-cloudflare/
