@@ -6,11 +6,11 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `nicholasduffy.com`,
-    siteTitle: `Nicholas Duffy`,
-    siteUrl: `https://nicholasduffy.com`,
+    siteTitleAlt: `pipefail.dev`,
+    siteTitle: `pipefail`,
+    siteUrl: `https://pipefail.dev`,
     siteHeadline: `Blog`,
-    siteDescription: `I write about Node.js, Go, Python, infrastructure, and data.`,
+    siteDescription: `I write about Python, Go, Node.js, cloud infrastructure, and data.`,
     author: `@duffn`,
   },
   plugins: [
@@ -18,7 +18,7 @@ module.exports = {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       options: {
         formatString: `YYYY-MM-DD`,
-        feedTitle: `nicholasduffy.com`,
+        feedTitle: `pipefail.dev`,
         navigation: [
           {
             title: `Blog`,
