@@ -1,3 +1,3 @@
 # blog
 
-My blog. https://nicholasduffy.com
+My blog. https://pipefail.dev
